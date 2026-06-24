@@ -1,0 +1,108 @@
+-- ============================================================
+-- PROJET 13 : Offres et Demandes d'Emploi IT
+-- Mesures DAX — Power BI Desktop
+-- Description : Formules DAX utilisées dans le tableau de bord.
+-- Auteur       : Zakaria Ennaqui — ENSA Berrechid
+-- Année        : 2025-2026
+-- ============================================================
+
+-- NOTE : Ce fichier documente les mesures DAX créées dans Power BI.
+--        Pour les utiliser, copiez-collez chaque formule dans
+--        l'éditeur de mesures Power BI Desktop.
+
+-- ============================================================
+-- MESURES DE BASE
+-- ============================================================
+
+-- Nombre total d'offres publiées
+NbOffres = DISTINCTCOUNT(FactOffres[OffreID_NK])
+
+-- Nombre total de candidatures
+NbCandidatures = COUNTROWS(FactCandidatures)
+
+-- Taux d'embauche global
+TauxEmbauche =
+    DIVIDE(
+        COUNTROWS(FILTER(FactCandidatures, FactCandidatures[EstEmbauche] = 1)),
+        COUNTROWS(FactCandidatures),
+        0
+    )
+
+-- ============================================================
+-- MESURES SALARIALES
+-- ============================================================
+
+-- Salaire minimum moyen des offres
+SalMin_Moy =
+    AVERAGEX(
+        SUMMARIZE(FactOffres, FactOffres[OffreID_NK], "Sal", MIN(FactOffres[SalaireMin])),
+        [Sal]
+    )
+
+-- Salaire maximum moyen des offres
+SalMax_Moy =
+    AVERAGEX(
+        SUMMARIZE(FactOffres, FactOffres[OffreID_NK], "Sal", MAX(FactOffres[SalaireMax])),
+        [Sal]
+    )
+
+-- Salaire moyen (midpoint)
+SalMoy =
+    DIVIDE(
+        SUMX(
+            SUMMARIZE(FactOffres, FactOffres[OffreID_NK],
+                "Min", MIN(FactOffres[SalaireMin]),
+                "Max", MAX(FactOffres[SalaireMax])
+            ),
+            ([Min] + [Max]) / 2
+        ),
+        DISTINCTCOUNT(FactOffres[OffreID_NK])
+    )
+
+-- ============================================================
+-- MESURES D'ANALYSE
+-- ============================================================
+
+-- Délai moyen avant entretien (jours)
+DelaiMoyen_Entretien =
+    AVERAGE(FactCandidatures[DelaiEntretien_Jours])
+
+-- Compétences les plus demandées (pour visualisation)
+NbOffres_ParComp =
+    CALCULATE(
+        DISTINCTCOUNT(FactOffres[OffreID_NK]),
+        ALLEXCEPT(FactOffres, DimCompetence[NomComp])
+    )
+
+-- Taux de télétravail
+TauxRemote =
+    DIVIDE(
+        CALCULATE(
+            DISTINCTCOUNT(FactOffres[OffreID_NK]),
+            DimOffre[Remote] = 1
+        ),
+        DISTINCTCOUNT(FactOffres[OffreID_NK]),
+        0
+    )
+
+-- ============================================================
+-- MESURES TEMPORELLES
+-- ============================================================
+
+-- Offres publiées ce mois
+OffreMoisCourant =
+    CALCULATE(
+        DISTINCTCOUNT(FactOffres[OffreID_NK]),
+        DATESMTD(DimTemps[DateComplete])
+    )
+
+-- Croissance des offres (MoM)
+CroissanceOffres_MoM =
+    VAR moisPrecedent =
+        CALCULATE(
+            DISTINCTCOUNT(FactOffres[OffreID_NK]),
+            PREVIOUSMONTH(DimTemps[DateComplete])
+        )
+    VAR moisCourant = [NbOffres]
+    RETURN
+        DIVIDE(moisCourant - moisPrecedent, moisPrecedent, 0)

@@ -1,0 +1,32 @@
+# Fichiers système Windows
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+
+# Fichiers Visual Studio / SSIS
+.vs/
+*.user
+*.suo
+bin/
+obj/
+*.log
+
+# Power BI temporaires
+~$*.pbix
+
+# Fichiers SQL Server temporaires
+*.ldf
+*.mdf
+*.bak
+
+# Fichiers de configuration locaux (chaînes de connexion)
+*.conmgr
+# Décommenter si vous voulez versionner les .conmgr :
+# !*.conmgr
+
+# Répertoire de sortie SSIS
+SSISProjet_EmploiIT/bin/
+SSISProjet_EmploiIT/obj/
