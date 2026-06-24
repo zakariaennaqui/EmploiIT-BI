@@ -2,9 +2,8 @@
 
 <div align="center">
 
-<img src="https://cdn.simpleicons.org/microsoftsqlserver/CC2927" alt="SQL Server" height="40"/>
-<img src="https://cdn.simpleicons.org/powerbi/F2C811" alt="Power BI" height="40"/>
-<img src="https://cdn.simpleicons.org/visualstudio/5C2D91" alt="Visual Studio" height="40"/>
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" alt="SQL Server" width="40" height="40"/>
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/visualstudio/visualstudio-plain.svg" alt="Visual Studio" width="40" height="40"/>
 
 **Intelligence Décisionnelle · ENSA Berrechid · 2025-2026**
 
