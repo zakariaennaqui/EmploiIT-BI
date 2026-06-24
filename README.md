@@ -2,9 +2,12 @@
 
 <div align="center">
 
-| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" width="50" height="50"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" width="50" height="50"/> | <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" width="50" height="50"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain.svg" width="50" height="50"/> |
-|:---:|:---:|:---:|:---:|
-| **SQL Server** | **SSIS** | **Power BI** | **Visual Studio** |
+<img src="https://raw.githubusercontent.com/Ndaruga/Integration-Services-with-ETL-using-MSSQL-server-and-.../main/images/architecture.png" alt="BI Architecture" width="800"/>
+
+<img src="images/ssms.png" width="50" height="50"/>
+<img src="images/ssis-logo.png.webp" width="50" height="50"/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" width="50" height="50"/>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain.svg" width="50" height="50"/>
 
 **Intelligence Décisionnelle · ENSA Berrechid · 2025-2026**
 
@@ -14,7 +17,7 @@
 
 ---
 
-## Table des matières
+## 
 
 1. [Contexte & Objectifs](#-contexte--objectifs)
 2. [Architecture Globale](#-architecture-globale)
