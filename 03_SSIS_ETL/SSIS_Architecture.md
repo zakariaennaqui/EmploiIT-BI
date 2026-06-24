@@ -1,8 +1,6 @@
 <!-- ============================================================
   PROJET 13 : Offres et Demandes d'Emploi IT
   Documentation des packages SSIS — SSISProjet_EmploiIT
-  Auteur : Zakaria Ennaqui — ENSA Berrechid
-  Année  : 2025-2026
 ============================================================= -->
 
 # Architecture SSIS — SSISProjet_EmploiIT
@@ -46,7 +44,7 @@ SQL_ViderDimensions (Execute SQL Task)
 
 ### Tâche SQL : SQL_ViderDimensions
 
-Exécute un TRUNCATE ordonné des tables de faits puis DELETE des dimensions :
+<!-- Exécute un TRUNCATE ordonné des tables de faits puis DELETE des dimensions : -->
 
 ```sql
 TRUNCATE TABLE DW_EmploiIT.dbo.FactCandidatures;

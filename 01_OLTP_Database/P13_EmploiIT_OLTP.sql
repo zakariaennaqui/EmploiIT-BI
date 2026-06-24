@@ -3,8 +3,6 @@
 -- Base de données OLTP : DB_EmploiIT
 -- Description : Base de données transactionnelle normalisée
 --               pour la gestion des offres et candidatures IT.
--- Auteur       : Zakaria Ennaqui — ENSA Berrechid
--- Année        : 2025-2026
 -- ============================================================
 
 USE master;

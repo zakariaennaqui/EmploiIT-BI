@@ -1,4 +1,4 @@
-# 📊 Observatoire du Marché de l'Emploi IT — Maroc 2026
+# Observatoire du Marché de l'Emploi IT — Maroc 2026
 
 <div align="center">
 
@@ -7,7 +7,7 @@
 ![Power BI](https://img.shields.io/badge/Power%20BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)
 ![Visual Studio](https://img.shields.io/badge/Visual%20Studio-5C2D91?style=for-the-badge&logo=visual-studio&logoColor=white)
 
-**Projet 13 — Intelligence Décisionnelle · ENSA Berrechid · 2025-2026**
+**Intelligence Décisionnelle · ENSA Berrechid · 2025-2026**
 
 *Solution BI bout-en-bout : OLTP → ETL (SSIS) → Data Warehouse → Power BI*
 
@@ -15,7 +15,7 @@
 
 ---
 
-## 📋 Table des matières
+## Table des matières
 
 1. [Contexte & Objectifs](#-contexte--objectifs)
 2. [Architecture Globale](#-architecture-globale)
@@ -26,39 +26,37 @@
 7. [Phase 3 — Pipeline ETL (SSIS)](#-phase-3--pipeline-etl-ssis)
 8. [Phase 4 — Tableau de bord Power BI](#-phase-4--tableau-de-bord-power-bi)
 9. [Insights Clés](#-insights-clés-du-marché-it-maroc-2026)
-10. [Lancer le projet](#-lancer-le-projet)
-11. [Auteur](#-auteur)
 
 ---
 
-## 🎯 Contexte & Objectifs
+## Contexte & Objectifs
 
 Le marché de l'emploi IT au Maroc connaît une transformation accélérée en 2026.
 Ce projet construit une **infrastructure décisionnelle complète** permettant d'analyser :
 
-- 📌 Les **offres d'emploi** publiées par secteur, ville et type de contrat
-- 👤 Les **profils candidats** et leur niveau de compétence
-- 🔗 Le **matching compétences** entre offres et candidats
-- 💰 Les **fourchettes salariales** par poste et par expérience
-- 📈 Les **tendances temporelles** du marché IT
+- Les **offres d'emploi** publiées par secteur, ville et type de contrat
+- Les **profils candidats** et leur niveau de compétence
+- Le **matching compétences** entre offres et candidats
+- Les **fourchettes salariales** par poste et par expérience
+- Les **tendances temporelles** du marché IT
 
 > **Périmètre** : 8 entreprises marocaines réelles (CIH Bank, Maroc Telecom, OCP Group, Capgemini, Jumia…),
 > 8 offres d'emploi, 7 candidats, 12 compétences IT.
 
 ---
 
-## 🏗 Architecture Globale
+## Architecture Globale
 
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
 │  Zone 1 : Production    Zone 2 : Transformation   Zone 3 : Stockage │
 │  (Source)               (Moteur ETL)              (Fondation DW)    │
-│                                                                      │
+│                                                                     │
 │  DB_EmploiIT      ──►  SSIS / Visual Studio  ──►  DW_EmploiIT       │
-│  (SQL Server)           Extraction, nettoyage      Schéma en étoile  │
-│  OLTP normalisé         TRUNCATE/DBCC              Clés SK           │
-│  Clés naturelles        Traduction NK → SK         Mode import       │
-│                                                          │           │
+│  (SQL Server)           Extraction, nettoyage      Schéma en étoile │
+│  OLTP normalisé         TRUNCATE/DBCC              Clés SK          │
+│  Clés naturelles        Traduction NK → SK         Mode import      │
+│                                                          │          │
 │                                            Zone 4 : Restitution     │
 │                                            (L'Exécutif)             │
 │                                            Power BI Desktop         │
@@ -70,7 +68,7 @@ Ce projet construit une **infrastructure décisionnelle complète** permettant d
 
 ---
 
-## 🛠 Stack Technologique
+## Stack Technologique
 
 | Couche | Technologie | Rôle |
 |--------|-------------|------|
@@ -83,7 +81,7 @@ Ce projet construit une **infrastructure décisionnelle complète** permettant d
 
 ---
 
-## 📁 Structure du Projet
+## Structure du Projet
 
 ```
 EmploiIT_BI/
@@ -98,38 +96,13 @@ EmploiIT_BI/
 ├── 03_SSIS_ETL/
 │   └── SSIS_Architecture.md          ← Documentation packages SSIS
 │
-├── 04_PowerBI/
-│   └── Mesures_DAX.dax               ← Formules DAX du tableau de bord
-│
-├── images/                           ← Captures du projet
-│   ├── Screenshot 2026-06-24 165028.png   (Architecture globale)
-│   ├── Screenshot 2026-06-24 165143.png   (Schéma en étoile - conception)
-│   ├── Screenshot 2026-06-24 165230.png   (SSIS flux dimensions)
-│   ├── Screenshot 2026-06-24 165256.png   (Mécanisme Lookup NK→SK)
-│   ├── Screenshot 2026-06-24 165329.png   (Moteur VertiPaq Power BI)
-│   ├── Screenshot 2026-06-24 165720.png   (Modèle Power BI - relations)
-│   ├── Screenshot 2026-06-24 165812.png   (Tableau de bord - vue light)
-│   ├── Screenshot 2026-06-24 165831.png   (Pkg_LoadFact - Data Flow)
-│   ├── Screenshot 2026-06-24 165848.png   (FactOffres - Lookups)
-│   ├── Screenshot 2026-06-24 165901.png   (FactCandidatures - Lookups)
-│   ├── Screenshot 2026-06-24 165927.png   (Tableau de bord complet)
-│   ├── Screenshot 2026-06-24 170126.png   (Pkg_LoadDimensions SSIS)
-│   ├── Screenshot 2026-06-24 170220.png   (Pkg_LoadFact Control Flow)
-│   ├── IMG-20260504-WA0000.jpg            (SQL Server - DB_EmploiIT)
-│   ├── IMG-20260505-WA0004.jpg            (Observatoire Power BI)
-│   ├── IMG-20260507-WA0027.jpg            (SSMS - tables OLTP)
-│   ├── IMG-20260508-WA0008.jpg            (SSIS - Visual Studio)
-│   ├── IMG-20260508-WA0009.jpg            (Pkg_LoadDimensions)
-│   ├── IMG-20260509-WA0000.jpg            (Modèle Power BI)
-│   ├── IMG-20260509-WA0001.jpg            (Mind Map du projet)
-│   └── IMG-20260512-WA0001.jpg            (Roadmap 5 phases)
-│
-└── README.md
+└── 04_PowerBI/
+    └── Mesures_DAX.dax               ← Formules DAX du tableau de bord
 ```
 
 ---
 
-## 🗃 Phase 1 — Base de données OLTP (`DB_EmploiIT`)
+## Phase 1 — Base de données OLTP (`DB_EmploiIT`)
 
 ### Modèle relationnel
 
@@ -165,7 +138,7 @@ Secteurs ──< Entreprises ──< Offres ──< OffresCompetences >── Co
 
 ---
 
-## ⭐ Phase 2 — Data Warehouse (`DW_EmploiIT`)
+## Phase 2 — Data Warehouse (`DW_EmploiIT`)
 
 ### Schéma en étoile (Star Schema)
 
@@ -218,7 +191,7 @@ DimCandidat ──*── FactCandidatures ──*── DimOffre ──1── 
 
 ---
 
-## ⚙️ Phase 3 — Pipeline ETL (SSIS)
+## Phase 3 — Pipeline ETL (SSIS)
 
 ### Vue d'ensemble
 
@@ -287,7 +260,7 @@ Le mécanisme central du pipeline : conversion des clés naturelles OLTP en clé
 
 ---
 
-## 📊 Phase 4 — Tableau de bord Power BI
+## Phase 4 — Tableau de bord Power BI
 
 ### Architecture du rapport
 
@@ -338,16 +311,16 @@ SalMoy =
 
 ---
 
-## 💡 Insights Clés du Marché IT Maroc 2026
+## Insights Clés du Marché IT Maroc 2026
 
 | Indicateur | Valeur |
 |------------|--------|
-| 📋 Offres publiées | **8** (CDI majoritaires) |
-| 👥 Candidatures totales | **11** |
-| ✅ Taux d'embauche | **33,33 %** |
-| 💰 Salaire moyen | **~16 380 MAD/mois** |
-| 🏠 Taux de télétravail | **37,5 %** (3/8 offres) |
-| 🏆 Poste le mieux rémunéré | **Cloud Architect Azure** (22k–35k MAD) |
+| Offres publiées | **8** (CDI majoritaires) |
+| Candidatures totales | **11** |
+| Taux d'embauche | **33,33 %** |
+| Salaire moyen | **~16 380 MAD/mois** |
+| Taux de télétravail | **37,5 %** (3/8 offres) |
+| Poste le mieux rémunéré | **Cloud Architect Azure** (22k–35k MAD) |
 
 ### Compétences les plus demandées
 
@@ -369,14 +342,14 @@ SSIS/ETL      ████████████          #5
 
 ---
 
-## 🚀 Lancer le projet
+<!-- ## Lancer le projet
 
 ### Prérequis
 
-- ✅ Microsoft SQL Server 2022 (ou 2019+)
-- ✅ SQL Server Management Studio (SSMS)
-- ✅ Visual Studio 2022 + SSIS Extension (SSDT)
-- ✅ Power BI Desktop (dernière version)
+- Microsoft SQL Server 2022 (ou 2019+)
+- SQL Server Management Studio (SSMS)
+- Visual Studio 2022 + SSIS Extension (SSDT)
+- Power BI Desktop (dernière version)
 
 ### Étapes d'exécution
 
@@ -421,13 +394,9 @@ SSIS/ETL      ████████████          #5
 4. Actualiser les données
 ```
 
----
+--- -->
 
-## 👤 Auteur
-
-**Zakaria Ennaqui**  
-Étudiant Ingénieur Informatique — ENSA Berrechid  
-Cycle Ingénieur · Promotion 2026
+## 
 
 [![GitHub](https://img.shields.io/badge/GitHub-zakariaennaqui-181717?style=flat&logo=github)](https://github.com/zakariaennaqui)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Zakaria%20Ennaqui-0A66C2?style=flat&logo=linkedin)](https://www.linkedin.com/in/zakaria-ennaqui-990883362)

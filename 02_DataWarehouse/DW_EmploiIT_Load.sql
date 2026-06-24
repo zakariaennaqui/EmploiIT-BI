@@ -3,8 +3,6 @@
 -- Script de chargement manuel du Data Warehouse DW_EmploiIT
 -- Description : Équivalent T-SQL des packages SSIS.
 --               Peuple les dimensions puis les tables de faits.
--- Auteur       : Zakaria Ennaqui — ENSA Berrechid
--- Année        : 2025-2026
 -- ============================================================
 
 USE DW_EmploiIT;

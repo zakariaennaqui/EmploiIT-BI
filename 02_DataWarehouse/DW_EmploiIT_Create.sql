@@ -3,8 +3,6 @@
 -- Data Warehouse : DW_EmploiIT — Schéma en Étoile
 -- Description : Entrepôt de données décisionnel pour
 --               l'analyse du marché de l'emploi IT au Maroc.
--- Auteur       : Zakaria Ennaqui — ENSA Berrechid
--- Année        : 2025-2026
 -- ============================================================
 
 USE master;
