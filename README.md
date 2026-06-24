@@ -3,14 +3,11 @@
 <div align="center">
 
 ![SQL Server](https://img.shields.io/badge/SQL%20Server%202022-CC2927?style=for-the-badge&logo=microsoft-sql-server&logoColor=white)
-![SSIS](https://img.shields.io/badge/SSIS-0078D4?style=for-the-badge&logo=microsoft&logoColor=white)
-![Data Warehouse](https://img.shields.io/badge/Data%20Warehouse-0078D4?style=for-the-badge&logo=microsoftazure&logoColor=white)
+![SSIS](https://img.shields.io/badge/SSIS%20%2F%20ETL-0078D4?style=for-the-badge&logo=microsoft&logoColor=white)
 ![Power BI](https://img.shields.io/badge/Power%20BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)
-
 ![Visual Studio](https://img.shields.io/badge/Visual%20Studio%202022-5C2D91?style=for-the-badge&logo=visual-studio&logoColor=white)
-![T-SQL](https://img.shields.io/badge/T--SQL-CC2927?style=for-the-badge&logo=microsoft-sql-server&logoColor=white)
 ![DAX](https://img.shields.io/badge/DAX-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)
-![Star Schema](https://img.shields.io/badge/Star%20Schema-4B8BBE?style=for-the-badge&logo=databricks&logoColor=white)
+![T-SQL](https://img.shields.io/badge/T--SQL-CC2927?style=for-the-badge&logo=microsoft-sql-server&logoColor=white)
 
 **Intelligence Décisionnelle · ENSA Berrechid · 2025-2026**
 
